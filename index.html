@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="Styles/style.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Coding Quiz</title>
+</head>
+
+<body>
+    <nav class="navbar-nav navbar-light bg-light">
+        <a class="navbar-brand" id="highscore" href="#">View Highscores</a>
+        <span class="navbar-text">
+            Time: <span id="timer-count">75</span>
+        </span>
+    </nav>
+    <br>
+    <div class="container">
+        <div class="row centered">
+            <div class="col">
+                <h1>Coding Quiz Challenge</h1>
+                <p>Welcome to my multiple choice coding quiz challenge. Answer as many questions as you can in 50 seconds. BE CAREFUL! Time is subtracted for incorrect answers.</p>
+            </div>
+        </div>
+        <br>
+        <div class="row centered">
+            <div class="col">
+                <ol id="question-list">
+                    <li>
+                        <button type="button" class="btn btn-primary btn-lg"><span
+                                id="question1-button">BEGIN QUIZ</span></button>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="row centered">
+            <div class="col">
+                <h2 id="response"></h2>
+            </div>
+        </div>
+    </div>
+    <script src="Develop/script.js"></script>
+</body>
+
+</html>
