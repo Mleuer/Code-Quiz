@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="Styles/style.css">
 
     <meta charset="utf-8">
@@ -22,8 +23,14 @@
     <div class="container">
         <div class="row centered">
             <div class="col">
-                <h1>Coding Quiz Challenge</h1>
-                <p>Welcome to my multiple choice coding quiz challenge. Answer as many questions as you can in 50 seconds. BE CAREFUL! Time is subtracted for incorrect answers.</p>
+                <h1 id="main-header">Coding Quiz Challenge</h1>
+                <p id="description">Welcome to my multiple choice coding quiz challenge. Answer as many questions as you
+                    can in 50 seconds. BE CAREFUL! Time is subtracted for incorrect answers.</p>
+            </div>
+        </div>
+        <div class="row centered">
+            <div class="col">
+                <button type="button" class="btn btn-primary btn-lg" id="start-button">BEGIN QUIZ</button>
             </div>
         </div>
         <br>
@@ -31,8 +38,16 @@
             <div class="col">
                 <ol id="question-list">
                     <li>
-                        <button type="button" class="btn btn-primary btn-lg"><span
-                                id="question1-button">BEGIN QUIZ</span></button>
+                        <button type="button" class="btn btn-primary btn-lg q-button" id="question1-button"></button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary btn-lg q-button" id="question2-button"></button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary btn-lg q-button" id="question3-button"></button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary btn-lg q-button" id="question4-button"></button>
                     </li>
                 </ol>
             </div>

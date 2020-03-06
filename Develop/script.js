@@ -30,8 +30,54 @@ var question5 = {
 
 var questions = [question1, question2, question3, question4, question5];
 
+var headerElement = document.querySelector("#main-header");
+var descriptionElement = document.querySelector("#description");
+var responseElement = document.querySelector("#response");
+var startButton = document.querySelector("#start-button");
 var button1 = document.querySelector("#question1-button");
+var button2 = document.querySelector("#question2-button");
+var button3 = document.querySelector("#question3-button");
+var button4 = document.querySelector("#question4-button");
 var highscoreButton = document.querySelector("#highscore");
 var timerElement = document.querySelector("#timer-count");
 var questionList = document.querySelector("#question-list");
+
+var buttons = [button1, button2, button3, button4];
+
+startButton.addEventListener("click", function () {
+    descriptionElement.setAttribute("style", "display: none");
+    startButton.setAttribute("style", "display: none");
+    var seconds = 75;
+    setInterval(function () {
+        seconds--;
+        timerElement.textContent = seconds;
+    }, 1000);
+    presentQuestion(1);
+});
+
+button1.addEventListener("click", function() {
+
+});
+
+button2.addEventListener("click", function() {
+    
+});
+
+button3.addEventListener("click", function() {
+    
+});
+
+button4.addEventListener("click", function() {
+    
+});
+
+function presentQuestion(questionNumber) {
+    var question = questions[questionNumber]
+    headerElement.textContent = questionNumber + ": " + question.name;
+    
+    for(var i = 0; i < question.possibleAnswers.length; i++) {
+        buttons[i].textContent = question.possibleAnswers[i];
+        buttons[i].setAttribute("style", "display: unset");
+    }
+}
 

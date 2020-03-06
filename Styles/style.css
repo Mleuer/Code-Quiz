@@ -6,3 +6,7 @@
 ol {
     list-style: none;
 }
+
+.q-button {
+    display: none;
+}
