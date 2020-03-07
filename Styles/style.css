@@ -1,12 +1,28 @@
+body {
+    background-color: darkcyan;
+}
+
 .centered {
     margin: auto;
     width: 50%;
 }
 
-ol {
+ul {
     list-style: none;
 }
 
 .q-button {
+    display: none;
+}
+
+h5 {
+    font-size: xx-large;
+}
+
+#response {
+    font-size: 100px;
+}
+
+.highscore-card {
     display: none;
 }
