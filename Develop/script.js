@@ -96,14 +96,14 @@ function getHighScores() {
         scores = JSON.parse(localStorage.getItem("scores"));
         var sortedScores = sortByHighScore(scores);
 
-        var scoreInitials = Object.keys(sortedScores)
+        //var scoreInitials = Object.keys(sortedScores)
 
-        for (var i = 0; i < scoreInitials.length; i++) {
+        for (var i = 0; i < sortedScores.length; i++) {
             var scoreLi = document.createElement("li");
             scoreLi.setAttribute("class", "centered");
-            var initials = scoreInitials[i];
-            var upperInitials = initials.toLocaleUpperCase();
-            scoreLi.textContent = upperInitials + " : " + sortedScores[initials];
+            var initialsScorePair = sortedScores[i];
+            var upperInitials = initialsScorePair[0].toLocaleUpperCase();
+            scoreLi.textContent = upperInitials + " : " + initialsScorePair[1];
             highScoreList.append(scoreLi);
         }
     }
