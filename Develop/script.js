@@ -94,18 +94,34 @@ saveButton.addEventListener("click", function () {
 function getHighScores() {
     if (localStorage.getItem("scores")) {
         scores = JSON.parse(localStorage.getItem("scores"));
+        var sortedScores = sortByHighScore(scores);
 
-        var scoreInitials = Object.keys(scores)
+        var scoreInitials = Object.keys(sortedScores)
 
         for (var i = 0; i < scoreInitials.length; i++) {
             var scoreLi = document.createElement("li");
             scoreLi.setAttribute("class", "centered");
             var initials = scoreInitials[i];
             var upperInitials = initials.toLocaleUpperCase();
-            scoreLi.textContent = upperInitials + " : " + scores[initials];
+            scoreLi.textContent = upperInitials + " : " + sortedScores[initials];
             highScoreList.append(scoreLi);
         }
     }
+}
+
+function sortByHighScore(scores) {
+    var InitialsAndScoresArray = Object.entries(scores);
+    InitialsAndScoresArray.sort(sortFunction);
+
+    function sortFunction(a, b) {
+        if (a[0] === b[0]) {
+            return 0;
+        }
+        else {
+            return (a[1] < b[1]) ? 1 : -1;
+        }
+    }
+    return InitialsAndScoresArray;
 }
 
 function renderQuestion(questionNumber) {
