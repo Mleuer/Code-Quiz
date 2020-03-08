@@ -11,6 +11,10 @@ ul {
     list-style: none;
 }
 
+ol {
+    font-size: xx-large;
+}
+
 .q-button {
     display: none;
 }
@@ -26,3 +30,4 @@ h5 {
 .highscore-card {
     display: none;
 }
+

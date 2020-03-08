@@ -12,7 +12,7 @@
     <title>Highscores</title>
 </head>
 
-<body>
+<body onload="getHighScores()">
     <nav class="navbar-nav navbar-light bg-light">
         <a class="navbar-brand" id="highscore" href="#">Highscores</a>
     </nav>
@@ -22,7 +22,7 @@
             <div class="card text-center welcome-card centered">
                 <div class="card-body">
                     <h5 class="card-title">HighScores</h5>
-                    <ol class="highscore-list"></ol>
+                    <ol id="highscore-list"></ol>
                     
                     <form action="./index.html">
                         <input class="btn btn-primary" type="submit" value="Back" />
@@ -31,3 +31,5 @@
             </div>
         </div>
     </div>
+    <script src="Develop/script.js"></script>
+</body>

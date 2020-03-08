@@ -22,6 +22,7 @@ var welcomeCard = document.querySelector(".welcome-card");
 var questionCard = document.querySelector(".question-card");
 var responseCard = document.querySelector(".response-card");
 var highScoreCard = document.querySelector(".highscore-card");
+var highScoreList = document.querySelector("#highscore-list");
 
 var startButton = document.querySelector("#start-button");
 var saveButton = document.querySelector("#save-button");
@@ -77,20 +78,34 @@ button4.addEventListener("click", function () {
     checkAnswer(this);
 });
 
-saveButton.addEventListener("click", function() {
+saveButton.addEventListener("click", function () {
     var scores = {};
-    if(localStorage.getItem("scores")) {
+    if (localStorage.getItem("scores")) {
         scores = JSON.parse(localStorage.getItem("scores"));
     }
-    Object.defineProperty(scores, userInputField.value, {value: score, enumerable: true});
+    Object.defineProperty(scores, userInputField.value, { value: score, enumerable: true });
 
     var scoresJSON = JSON.stringify(scores);
     localStorage.setItem("scores", scoresJSON);
+
     window.location.href = "./highscore.html";
 })
 
 function getHighScores() {
-    
+    if (localStorage.getItem("scores")) {
+        scores = JSON.parse(localStorage.getItem("scores"));
+
+        var scoreInitials = Object.keys(scores)
+
+        for (var i = 0; i < scoreInitials.length; i++) {
+            var scoreLi = document.createElement("li");
+            scoreLi.setAttribute("class", "centered");
+            var initials = scoreInitials[i];
+            var upperInitials = initials.toLocaleUpperCase();
+            scoreLi.textContent = upperInitials + " : " + scores[initials];
+            highScoreList.append(scoreLi);
+        }
+    }
 }
 
 function renderQuestion(questionNumber) {
